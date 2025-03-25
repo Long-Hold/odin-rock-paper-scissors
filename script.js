@@ -45,14 +45,20 @@ function playRound(humanChoice, ComputerChoice)
     // Compare human and computer choice to eachother
     // Based on game rules, increment the score of the winner
     // Display a win or lose message for the human player
-    if (isHumanWinner(humanChoice, ComputerChoice))
+    if (humanChoice === ComputerChoice)
     {
-        alert("You win!");
+        alert("Tie! No winner this round!");
+    }
+    else if (isHumanWinner(humanChoice, ComputerChoice))
+    {
+        alert(`${humanChoice} beats ${ComputerChoice}!
+            You win this round!`);
         ++humanScore;
     }
     else
     {
-        alert("You lose!");
+        alert(`${ComputerChoice} beats ${humanChoice}!
+            You lose this round!`);
         ++computerScore;
     }
     return;
@@ -95,19 +101,24 @@ function playGame()
     // Create a loop that runs so long as we have remaining rounds
     while (remainingRounds > 0)
     {
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        let computerSelection = getComputerChoice();
+        console.log(`Computer Choice: ${computerSelection}`);
+        let humanSelection = getHumanChoice();
+
         playRound(humanSelection, computerSelection);
-        console.log(`Player Score: ${humanScore}
-            Computer Score: ${computerScore}`);
+        console.log(`Player Score: ${humanScore} Computer Score: ${computerScore}`);
         --remainingRounds;
     }
 
     alert(`Game Over. 
         Player Score: ${humanScore} 
         Computer Score: ${computerScore}`);
-
-    if (humanScore > computerScore)
+    
+    if (humanScore === computerScore)
+    {
+        alert("You tied the game! How is that possible?");
+    }
+    else if (humanScore > computerScore)
     {
         alert("You won the game!");
     }
@@ -117,4 +128,4 @@ function playGame()
     }
 }
 
-// playGame();
+playGame();

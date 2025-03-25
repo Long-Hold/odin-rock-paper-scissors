@@ -21,7 +21,7 @@ function getMove(choice)
         case 2:
             return "Scissors";
         default:
-            console.alert("Invalid selection");
+            alert("Invalid selection");
             break; 
     }
 }
@@ -101,9 +101,9 @@ function playGame()
     // Create a loop that runs so long as we have remaining rounds
     while (remainingRounds > 0)
     {
-        let computerSelection = getComputerChoice();
+        const computerSelection = getComputerChoice();
         console.log(`Computer Choice: ${computerSelection}`);
-        let humanSelection = getHumanChoice();
+        const humanSelection = getHumanChoice();
 
         playRound(humanSelection, computerSelection);
         console.log(`Player Score: ${humanScore} Computer Score: ${computerScore}`);

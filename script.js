@@ -30,3 +30,13 @@ function getComputerChoice()
     // Return the corresponding move of that int
     return getMove(choice);
 }
+
+function getHumanChoice()
+{
+    let choice = parseInt(prompt(`Choose your play:
+        0: Rock
+        1: Paper
+        2: Scissors`));
+    
+    return getMove(choice);
+}

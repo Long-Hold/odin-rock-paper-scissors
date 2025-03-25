@@ -1,3 +1,7 @@
+// Global variables to track score in game
+let computerScore = 0;
+let humanScore = 0;
+
 function getRandomInt(max)
 {
     // Returns a random int from 0 to max (exclusive)
@@ -28,15 +32,19 @@ function getComputerChoice()
     const choice = getRandomInt(3);
 
     // Return the corresponding move of that int
-    return getMove(choice);
+    return getMove(choice).toLowerCase();
 }
 
 function getHumanChoice()
 {
-    let choice = parseInt(prompt(`Choose your play:
-        0: Rock
-        1: Paper
-        2: Scissors`));
-    
-    return getMove(choice);
+    return prompt("Rock, Paper, Scissors: ").toLowerCase();
 }
+
+function playRound(humanChoice, getComputerChoice)
+{
+    //
+}
+
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
+

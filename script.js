@@ -96,19 +96,21 @@ function isHumanWinner(humanChoice, ComputerChoice)
 function playGame()
 {
     // Initialize a variable with number of remaining rounds
-    let remainingRounds = 5;
+    // let remainingRounds = 5;
 
     // Create a loop that runs so long as we have remaining rounds
-    while (remainingRounds > 0)
-    {
-        const computerSelection = getComputerChoice();
-        console.log(`Computer Choice: ${computerSelection}`);
-        const humanSelection = getHumanChoice();
+    // while (remainingRounds > 0)
+    // {
+    //     const computerSelection = getComputerChoice();
+    //     // Debugging usage
+    //     // console.log(`Computer Choice: ${computerSelection}`);
+    //     const humanSelection = getHumanChoice();
 
-        playRound(humanSelection, computerSelection);
-        console.log(`Player Score: ${humanScore} Computer Score: ${computerScore}`);
-        --remainingRounds;
-    }
+    //     playRound(humanSelection, computerSelection);
+    //     // Debugging usage
+    //     // console.log(`Player Score: ${humanScore} Computer Score: ${computerScore}`);
+    //     --remainingRounds;
+    // }
 
     alert(`Game Over. 
         Player Score: ${humanScore} 
@@ -128,4 +130,5 @@ function playGame()
     }
 }
 
-playGame();
+// Uncomment to run game
+// playGame();

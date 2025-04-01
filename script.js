@@ -62,22 +62,37 @@ function playRound(humanChoice, ComputerChoice)
     // Compare human and computer choice to eachother
     // Based on game rules, increment the score of the winner
     // Display a win or lose message for the human player
+
+    const gameMessage = document.createElement('p');
+    let node;
     if (humanChoice === ComputerChoice)
     {
-        alert("Tie! No winner this round!");
+        node = document.createTextNode("Tie! No winner this round!");
     }
     else if (isHumanWinner(humanChoice, ComputerChoice))
     {
-        alert(`${humanChoice} beats ${ComputerChoice}!
+        node = document.createTextNode(`${humanChoice} beats ${ComputerChoice}!
             You win this round!`);
         ++humanScore;
     }
     else
     {
-        alert(`${ComputerChoice} beats ${humanChoice}!
+        node = document.createTextNode(`${ComputerChoice} beats ${humanChoice}!
             You lose this round!`);
         ++computerScore;
     }
+
+    const scoreNode = document.createTextNode(`Player Score: ${humanScore} CPU Score: ${computerScore}`);
+
+    gameMessage.append(node, scoreNode);
+    recordPlay(gameMessage);
+    return;
+}
+
+function recordPlay(roundMessage)
+{
+    const gameBoard = document.getElementById('game-results');
+    gameBoard.appendChild(roundMessage);
     return;
 }
 

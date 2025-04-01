@@ -5,3 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+li {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

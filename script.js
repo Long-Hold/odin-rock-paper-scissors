@@ -64,35 +64,34 @@ function playRound(humanChoice, ComputerChoice)
     // Display a win or lose message for the human player
 
     const gameMessage = document.createElement('p');
-    let node;
+    let outcome;
     if (humanChoice === ComputerChoice)
     {
-        node = document.createTextNode("Tie! No winner this round!");
+        outcome = "Tie! No winner this round!";
     }
     else if (isHumanWinner(humanChoice, ComputerChoice))
     {
-        node = document.createTextNode(`${humanChoice} beats ${ComputerChoice}!
-            You win this round!`);
+        outcome = `${humanChoice} beats ${ComputerChoice}!
+            You win this round!`;
         ++humanScore;
     }
     else
     {
-        node = document.createTextNode(`${ComputerChoice} beats ${humanChoice}!
-            You lose this round!`);
+        outcome = `${ComputerChoice} beats ${humanChoice}!
+            You lose this round!`;
         ++computerScore;
     }
 
-    const scoreNode = document.createTextNode(`Player Score: ${humanScore} CPU Score: ${computerScore}`);
-
-    gameMessage.append(node, scoreNode);
-    recordPlay(gameMessage);
-    return;
+    return `${outcome}
+        Human Score: ${humanScore}
+        Computer Score: ${computerScore} `;
 }
 
-function recordPlay(roundMessage)
+function recordPlay(roundMessage, remainingRounds)
 {
     const gameBoard = document.getElementById('game-results');
-    gameBoard.appendChild(roundMessage);
+    roundMessage.textContent += `\nRemaining Rounds: ${remainingRounds}`;
+    gameBoard.append(roundMessage);
     return;
 }
 
@@ -136,8 +135,11 @@ async function playGame()
         const humanSelection = await getHumanChoice();
         const computerSelection = getComputerChoice();
 
-        playRound(humanSelection, computerSelection);
+        const roundInfo = document.createElement('p');
+        roundInfo.textContent = playRound(humanSelection, computerSelection);
         --remainingRounds;
+
+        recordPlay(roundInfo, remainingRounds);
     }
 
     alert(`Game Over. 

@@ -37,7 +37,24 @@ function getComputerChoice()
 
 function getHumanChoice()
 {
-    return prompt("Rock, Paper, Scissors: ").toLowerCase();
+    /* Select the list that contains the buttons that the human selects
+        Using event delegation and bubbling, we capture the id of the
+        selected button, which will be the play made by the human.
+    */
+    return new Promise((resolve) => {
+        const gameButtons = document.getElementById("choice-buttons");
+
+        function handleClick(event) {
+            if (event.target.tagName === 'BUTTON')
+            {
+                gameButtons.removeEventListener('click', handleClick);
+                resolve(event.target.id);
+            }
+        }
+
+        gameButtons.addEventListener('click', handleClick);
+    });
+
 }
 
 function playRound(humanChoice, ComputerChoice)
@@ -93,20 +110,20 @@ function isHumanWinner(humanChoice, ComputerChoice)
     else return false;
 }
 
-function playGame()
+async function playGame()
 {
     // Initialize a variable with number of remaining rounds
     let remainingRounds = 5;
 
     // Create a loop that runs so long as we have remaining rounds
-    // while (remainingRounds > 0)
-    // {
-    //     const computerSelection = getComputerChoice();
-    //     const humanSelection = getHumanChoice();
+    while (remainingRounds > 0)
+    {
+        const humanSelection = await getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-    //     playRound(humanSelection, computerSelection);
-    //     --remainingRounds;
-    // }
+        playRound(humanSelection, computerSelection);
+        --remainingRounds;
+    }
 
     alert(`Game Over. 
         Player Score: ${humanScore} 
@@ -127,4 +144,4 @@ function playGame()
 }
 
 // Uncomment to run game
-// playGame();
+playGame()

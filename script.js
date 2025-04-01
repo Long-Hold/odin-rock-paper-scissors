@@ -142,22 +142,32 @@ async function playGame()
         recordPlay(roundInfo, remainingRounds);
     }
 
-    alert(`Game Over. 
+    const winnerContainer = document.getElementById('winner-box');
+
+    const statMessage = document.createElement('p');
+
+    statMessage.textContent = `Game Over. 
         Player Score: ${humanScore} 
-        Computer Score: ${computerScore}`);
+        Computer Score: ${computerScore}`;
+
+    winnerContainer.append(statMessage);
+
+    const outcomeMessage = document.createElement('p');
     
     if (humanScore === computerScore)
     {
-        alert("You tied the game! How is that possible?");
+        outcomeMessage.textContent = "You tied the game! How is that possible?";
     }
     else if (humanScore > computerScore)
     {
-        alert("You won the game!");
+        outcomeMessage.textContent = "You won the game!";
     }
     else
     {
-        alert("CPU wins the game!");
+        outcomeMessage = "CPU wins the game!";
     }
+
+    winnerContainer.append(outcomeMessage);
 }
 
 // Uncomment to run game

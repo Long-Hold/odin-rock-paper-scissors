@@ -12,6 +12,12 @@ li {
     list-style-type: none;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 section {
     display: flex;
     justify-content: center;

@@ -20,14 +20,14 @@ header {
     flex-flow: row wrap;
     justify-content: space-around;
     padding: 1rem 2rem;
-    margin-bottom: 1rem;
     border-bottom:solid 1px gold;
 }
 
 /* Game button section customizations */
 
 #choice-buttons {
-    margin: 1rem;
+    padding: 1rem;
+    border-bottom: solid 1px gold;
 }
 
 ul {

@@ -17,9 +17,20 @@ li {
     list-style-type: none;
 }
 
+/* Universal button styling */
 button {
     min-width: 5rem;
     min-height: 2rem;
     border: solid black 2px;
     border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Button color change when hovered over, or clicked */
+button:hover {
+    background-color: darkgray;
+}
+
+button:active {
+    background-color: red;
 }

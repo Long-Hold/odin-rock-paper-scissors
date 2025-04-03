@@ -58,3 +58,11 @@ button:hover {
 button:active {
     background-color: red;
 }
+
+/* Stylization for live-update boards */
+.game-info {
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 1rem;
+    padding: 1rem 0;
+}

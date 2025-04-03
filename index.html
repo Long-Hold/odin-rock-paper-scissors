@@ -23,15 +23,34 @@
         </ul>
     </section>
 
-    <!--Displays each play by the computer and playey
-        Also displays the winner of each round. Updated with JS-->
-    <div id="game-results">
+    <!-- Container for all game related information-->
+    <div class="game-info">
 
-    </div>
+        <!-- This section displays the players and computers choice
+         Updated dynamically by javascript-->
+        <section class="info-container" id="round-choice">
+            <h4><u>Current Play</u></h4>
+            <p id="player-choice">Your Play: </p>
+            <p id="computer-choice">Computer Play: </p>
+        </section>
 
-    <!-- Displays the winner of the game after a round ends, updated with JS-->
-    <div id="winner-box">
-        
+        <!--Displays current score, controlled by javascript-->
+        <section class="info-container" id="score-board">
+            <h4><u>Scoreboard</u></h4>
+            <p>Human Score: <span class="score">0</span></p>
+            <p>Computer Score: <span class="score">0</span></p>
+        </section>
+
+        <!--Displays each play by the computer and playey
+            Also displays the winner of each round. Updated with JS-->
+        <section id="game-results">
+
+        </section>
+
+        <!-- Displays the winner of the game after a round ends, updated with JS-->
+        <section id="winner-box">
+            
+        </section>
     </div>
 </body>
 

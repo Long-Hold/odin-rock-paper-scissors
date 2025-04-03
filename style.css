@@ -24,6 +24,12 @@ header {
     border-bottom:solid 1px gold;
 }
 
+/* Game button section customizations */
+
+#choice-buttons {
+    margin: 1rem;
+}
+
 ul {
     display: flex;
     flex-direction: column;

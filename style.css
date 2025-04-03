@@ -6,6 +6,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    --odinBlue: rgb(14,24,39);
+}
+
+body {
+    background-color: var(--odinBlue);
+    color: white;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    border-bottom:solid 1px gold;
+}
+
 ul {
     display: flex;
     flex-direction: column;

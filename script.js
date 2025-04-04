@@ -170,5 +170,14 @@ async function playGame()
     winnerContainer.append(outcomeMessage);
 }
 
+function currentPlay(humanPick, computerPick) 
+{
+    const humanPlay = document.getElementById("player-choice");
+    const computerPlay = document.getElementById("computer-choice");
+
+    humanPlay.textContent = humanPick;
+    computerPlay.textContent = computerPick;
+}
+
 // Uncomment to run game
 playGame()

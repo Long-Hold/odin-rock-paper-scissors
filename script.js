@@ -218,6 +218,7 @@ function resetGame()
     computerScore = 0;
     humanScore = 0;
     updateScoreboard();
+    currentPlay();
     
     const gameBoard = document.getElementById('game-results');
     const heading = gameBoard.querySelector('h4');

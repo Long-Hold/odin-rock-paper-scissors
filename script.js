@@ -63,7 +63,6 @@ function playRound(humanChoice, ComputerChoice)
     // Based on game rules, increment the score of the winner
     // Display a win or lose message for the human player
 
-    const gameMessage = document.createElement('p');
     let outcome;
     if (humanChoice === ComputerChoice)
     {
@@ -82,15 +81,12 @@ function playRound(humanChoice, ComputerChoice)
         ++computerScore;
     }
 
-    return `${outcome}
-        Human Score: ${humanScore}
-        Computer Score: ${computerScore} `;
+    return `${outcome}`;
 }
 
-function recordPlay(roundMessage, remainingRounds)
+function recordPlay(roundMessage)
 {
     const gameBoard = document.getElementById('game-results');
-    roundMessage.textContent += `\nRemaining Rounds: ${remainingRounds}`;
     gameBoard.append(roundMessage);
     return;
 }
@@ -144,7 +140,7 @@ async function playGame()
         --remainingRounds;
 
         updateScoreboard();
-        recordPlay(roundInfo, remainingRounds);
+        recordPlay(roundInfo);
     }
 
     // Update round count once loop ends

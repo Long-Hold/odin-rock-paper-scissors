@@ -132,6 +132,8 @@ async function playGame()
     // Create a loop that runs so long as we have remaining rounds
     while (remainingRounds > 0)
     {
+        updateRoundCounter(remainingRounds);
+
         const humanSelection = await getHumanChoice();
         const computerSelection = getComputerChoice();
 
@@ -144,6 +146,9 @@ async function playGame()
         updateScoreboard();
         recordPlay(roundInfo, remainingRounds);
     }
+
+    // Update round count once loop ends
+    updateRoundCounter(remainingRounds);
 
     const winnerContainer = document.getElementById('winner-box');
     const outcomeMessage = document.createElement('p');
@@ -184,6 +189,12 @@ function updateScoreboard()
     
     humanScoreVal.textContent = humanScore;
     computerScoreVal.textContent = computerScore;
+}
+
+function updateRoundCounter(remainingRounds)
+{
+    const roundCount = document.getElementById("round-counter");
+    roundCount.textContent = remainingRounds;
 }
 
 // Uncomment to run game

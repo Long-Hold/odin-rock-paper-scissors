@@ -206,10 +206,26 @@ function playAgain()
     function restartHandler()
     {
         playAgain.remove();
-        playGame()
+        resetGame();
+        playGame();
     }
 
     playAgain.addEventListener('click', restartHandler);
+}
+
+function resetGame()
+{
+    computerScore = 0;
+    humanScore = 0;
+    updateScoreboard();
+    
+    const gameBoard = document.getElementById('game-results');
+    const heading = gameBoard.querySelector('h4');
+
+    while (heading.nextElementSibling)
+    {
+        gameBoard.removeChild(heading.nextElementSibling);
+    }
 }
 
 // Uncomment to run game

@@ -83,8 +83,14 @@ button:active {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
-    border: solid red 1px;
     text-align: center;
+    border: solid red 1px;
+}
+
+.live-status-container .result-container {
+    max-width: 100vw;
+    flex-basis: 20%;
+    border: solid red 1px;
 }
 
 /* Footer stylizations */

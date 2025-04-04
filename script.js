@@ -186,6 +186,8 @@ function currentPlay(humanPick, computerPick)
 
 function updateScoreboard(humanScore, computerScore)
 {
+    // Targets HTML element that displays the current score
+    // Then updates it to the current score values after each round
     const humanScoreVal = document.getElementById("human-score");
     const computerScoreVal = document.getElementById("computer-score");
     

@@ -23,6 +23,15 @@ header {
     border-bottom:solid 1px gold;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkgray;
+}
+
 /* Game button section customizations */
 
 #choice-buttons {

@@ -135,6 +135,8 @@ async function playGame()
         const humanSelection = await getHumanChoice();
         const computerSelection = getComputerChoice();
 
+        currentPlay(humanSelection, computerSelection);
+
         const roundInfo = document.createElement('p');
         roundInfo.textContent = playRound(humanSelection, computerSelection);
         --remainingRounds;
@@ -172,6 +174,8 @@ async function playGame()
 
 function currentPlay(humanPick, computerPick) 
 {
+    // Updates the "current play" board on HTML with the users and CPU's
+    // choice for the given round.
     const humanPlay = document.getElementById("player-choice");
     const computerPlay = document.getElementById("computer-choice");
 

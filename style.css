@@ -99,4 +99,5 @@ footer {
     justify-content: space-between;
     margin-top: auto;
     padding: 1rem;
+    border-top: solid gold 1px;
 }

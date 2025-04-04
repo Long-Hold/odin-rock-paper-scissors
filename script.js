@@ -146,15 +146,6 @@ async function playGame()
     }
 
     const winnerContainer = document.getElementById('winner-box');
-
-    const statMessage = document.createElement('p');
-
-    statMessage.textContent = `Game Over. 
-        Player Score: ${humanScore} 
-        Computer Score: ${computerScore}`;
-
-    winnerContainer.append(statMessage);
-
     const outcomeMessage = document.createElement('p');
     
     if (humanScore === computerScore)
@@ -167,7 +158,7 @@ async function playGame()
     }
     else
     {
-        outcomeMessage = "CPU wins the game!";
+        outcomeMessage.textContent = "CPU wins the game!";
     }
 
     winnerContainer.append(outcomeMessage);

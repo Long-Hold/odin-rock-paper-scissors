@@ -163,6 +163,7 @@ async function playGame()
     }
 
     winnerContainer.append(outcomeMessage);
+    playAgain();
 }
 
 function currentPlay(humanPick, computerPick) 
@@ -191,6 +192,24 @@ function updateRoundCounter(remainingRounds)
 {
     const roundCount = document.getElementById("round-counter");
     roundCount.textContent = remainingRounds;
+}
+
+function playAgain()
+{
+    const playAgain = document.createElement('button');
+    playAgain.textContent = "Restart";
+    const buttonContainer = document.getElementById("replay-button-container");
+
+    buttonContainer.append(playAgain);
+    
+    let restartGame = false;
+    function restartHandler()
+    {
+        playAgain.remove();
+        playGame()
+    }
+
+    playAgain.addEventListener('click', restartHandler);
 }
 
 // Uncomment to run game

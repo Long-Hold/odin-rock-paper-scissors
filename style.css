@@ -84,13 +84,13 @@ button:active {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     text-align: center;
-    border: solid red 1px;
 }
 
-.live-status-container .result-container {
+.live-status-container .result-container,
+.live-status-container .info-container {
     max-width: 100vw;
-    flex-basis: 20%;
-    border: solid red 1px;
+    justify-content: space-evenly;
+    flex-basis: 50%;
 }
 
 /* Footer stylizations */

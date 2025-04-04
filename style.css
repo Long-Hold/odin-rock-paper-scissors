@@ -11,8 +11,11 @@
 }
 
 body {
+    display: flex;
+    flex-flow: column nowrap;
     background-color: var(--odinBlue);
     color: white;
+    min-height: 100vh;
 }
 
 header {
@@ -82,4 +85,12 @@ button:active {
     justify-content: space-evenly;
     border: solid red 1px;
     text-align: center;
+}
+
+/* Footer stylizations */
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 1rem;
 }

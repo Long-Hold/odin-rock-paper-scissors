@@ -141,7 +141,7 @@ async function playGame()
         roundInfo.textContent = playRound(humanSelection, computerSelection);
         --remainingRounds;
 
-        updateScoreboard(humanScore, computerScore);
+        updateScoreboard();
         recordPlay(roundInfo, remainingRounds);
     }
 
@@ -184,7 +184,7 @@ function currentPlay(humanPick, computerPick)
     computerPlay.textContent = computerPick;
 }
 
-function updateScoreboard(humanScore, computerScore)
+function updateScoreboard()
 {
     // Targets HTML element that displays the current score
     // Then updates it to the current score values after each round

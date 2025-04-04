@@ -36,12 +36,13 @@ a:hover {
 }
 
 /* Game button section customizations */
-
-#choice-buttons {
+.buttons-round-container {
     padding: 1rem;
     border-bottom: solid 1px gold;
+
 }
 
+.buttons-round-container,
 ul {
     display: flex;
     flex-direction: column;

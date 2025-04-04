@@ -141,6 +141,7 @@ async function playGame()
         roundInfo.textContent = playRound(humanSelection, computerSelection);
         --remainingRounds;
 
+        updateScoreboard(humanScore, computerScore);
         recordPlay(roundInfo, remainingRounds);
     }
 
@@ -181,6 +182,15 @@ function currentPlay(humanPick, computerPick)
 
     humanPlay.textContent = humanPick;
     computerPlay.textContent = computerPick;
+}
+
+function updateScoreboard(humanScore, computerScore)
+{
+    const humanScoreVal = document.getElementById("human-score");
+    const computerScoreVal = document.getElementById("computer-score");
+    
+    humanScoreVal.textContent = humanScore;
+    computerScoreVal.textContent = computerScore;
 }
 
 // Uncomment to run game

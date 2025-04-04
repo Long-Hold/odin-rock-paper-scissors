@@ -75,3 +75,11 @@ button:active {
     row-gap: 1rem;
     padding: 1rem 0;
 }
+
+.live-status-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    border: solid red 1px;
+    text-align: center;
+}
